@@ -31,6 +31,11 @@ func TestAccUserGroup(t *testing.T) {
 						"attributes.posix_groups", fmt.Sprintf("%d:%s", gid, posixName)),
 				),
 			},
+			{
+				ResourceName:      "jumpcloud_user_group.test_group",
+				ImportState:       true,
+				ImportStateVerify: true,
+			},
 		},
 	})
 }

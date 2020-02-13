@@ -27,6 +27,11 @@ func TestAccUser(t *testing.T) {
 					resource.TestCheckResourceAttr("jumpcloud_user.test_user", "email", rName+"@testorg.com"),
 				),
 			},
+			{
+				ResourceName:      "jumpcloud_user.test_user",
+				ImportState:       true,
+				ImportStateVerify: true,
+			},
 		},
 	})
 }
